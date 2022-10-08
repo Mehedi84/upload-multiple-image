@@ -6,7 +6,7 @@ function imageFunction($imageName, $imageSize, $imageTmp)
   $allwoed_extention = array('pdf', 'png', 'jpg','JPEG','PNG','GIF','jpeg','JPG','PDF','docx');
   if(in_array($ext, $allwoed_extention)){
     if ($imageSize < 10485760) {
-      echo $newfilename = round(microtime(true)) . $imageName;
+      echo $newfilename = round(microtime(true)) ."_".$imageSize."_".$imageName;
       move_uploaded_file($imageTmp, "image/".$newfilename);
       return $newfilename;
     }else{
@@ -16,6 +16,7 @@ function imageFunction($imageName, $imageSize, $imageTmp)
     echo "Extension Not Match";
   }
 }
+
 $count = count($_FILES['image']['name']);
 for ($i=0; $i < $count; $i++) { 
 $imageName = $_FILES['image']['name'][$i];
