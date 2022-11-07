@@ -10,7 +10,7 @@ function imageFunction($imageName, $imageSize, $imageTmp)
       move_uploaded_file($imageTmp, "image/".$newfilename);
       return $newfilename;
     }else{
-      echo "File Size Onek Boro";
+      echo "File Size Not Match";
     }
   }else{
     echo "Extension Not Match";
